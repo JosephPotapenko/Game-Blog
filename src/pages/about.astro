@@ -1,0 +1,34 @@
+---
+import theData from '../data/theData.json';
+const clientName = 'JOE';
+const theCurrentYear = new Date().getFullYear();
+
+
+const emojiSet = ['🎸','💻','🖼️✏️','🍳'];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>clientName</title>
+		<a href="/">Home</a>
+		<a href="/about">About</a>
+	</head>
+	<body>
+		<h1>A little about me</h1>
+			<p>Welcome to {clientName}</p>
+			<p>This is the temporary websight of {theData.name}. He is {theData.age} years old.</p>
+			<p>{theData.name} favorite hobbies are:</p>
+			<ul>
+				{emojiSet.map((emoji) => (
+					<li>{emoji}</li>
+				))}
+
+			<!-- <img src="" alt="{clientName}"> -->
+		    </ul>
+			<footer>Copyright {theCurrentYear}</footer>
+	</body>
+</html>
